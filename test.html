@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5动态页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        canvas {
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML5动态页面示例</h1>
+    <button id="refresh-button">刷新数据</button>
+
+    <h2>表格数据</h2>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>标签</th>
+                <th>值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 数据将通过JavaScript动态填充 -->
+        </tbody>
+    </table>
+
+    <h2>图表展示</h2>
+    <canvas id="data-chart"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // 获取DOM元素
+        const tableBody = document.querySelector('#data-table tbody');
+        const refreshButton = document.getElementById('refresh-button');
+        const ctx = document.getElementById('data-chart').getContext('2d');
+
+        // 初始化图表
+        let chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: '数据值',
+                    data: [],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // 从API获取数据并更新页面
+        function fetchData() {
+            fetch('http://127.0.0.1:5000/api/data')
+                .then(response => response.json())
+                .then(data => {
+                    // 清空表格
+                    tableBody.innerHTML = '';
+
+                    // 填充表格
+                    data.labels.forEach((label, index) => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td>${label}</td><td>${data.values[index]}</td>`;
+                        tableBody.appendChild(row);
+                    });
+
+                    // 更新图表
+                    chart.data.labels = data.labels;
+                    chart.data.datasets[0].data = data.values;
+                    chart.update();
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // 页面加载时获取数据
+        fetchData();
+
+        // 点击按钮刷新数据
+        refreshButton.addEventListener('click', fetchData);
+    </script>
+</body>
+</html>
