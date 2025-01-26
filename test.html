@@ -3,123 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML5动态页面</title>
+    <title>我的简单网页</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
             color: #333;
         }
-        table {
-            width: 50%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        canvas {
-            max-width: 600px;
-            margin-top: 20px;
-        }
-        button {
-            padding: 10px 20px;
+        header {
             background-color: #4CAF50;
             color: white;
-            border: none;
-            cursor: pointer;
+            padding: 20px;
+            text-align: center;
         }
-        button:hover {
-            background-color: #45a049;
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <h1>HTML5动态页面示例</h1>
-    <button id="refresh-button">刷新数据</button>
-
-    <h2>表格数据</h2>
-    <table id="data-table">
-        <thead>
-            <tr>
-                <th>标签</th>
-                <th>值</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- 数据将通过JavaScript动态填充 -->
-        </tbody>
-    </table>
-
-    <h2>图表展示</h2>
-    <canvas id="data-chart"></canvas>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // 获取DOM元素
-        const tableBody = document.querySelector('#data-table tbody');
-        const refreshButton = document.getElementById('refresh-button');
-        const ctx = document.getElementById('data-chart').getContext('2d');
-
-        // 初始化图表
-        let chart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: [],
-                datasets: [{
-                    label: '数据值',
-                    data: [],
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        // 从API获取数据并更新页面
-        function fetchData() {
-            fetch('http://127.0.0.1:5000/api/data')
-                .then(response => response.json())
-                .then(data => {
-                    // 清空表格
-                    tableBody.innerHTML = '';
-
-                    // 填充表格
-                    data.labels.forEach((label, index) => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `<td>${label}</td><td>${data.values[index]}</td>`;
-                        tableBody.appendChild(row);
-                    });
-
-                    // 更新图表
-                    chart.data.labels = data.labels;
-                    chart.data.datasets[0].data = data.values;
-                    chart.update();
-                })
-                .catch(error => console.error('Error fetching data:', error));
-        }
-
-        // 页面加载时获取数据
-        fetchData();
-
-        // 点击按钮刷新数据
-        refreshButton.addEventListener('click', fetchData);
-    </script>
+    <header>
+        <h1>欢迎来到我的简单网页</h1>
+    </header>
+    <main>
+        <h2>关于这个网页</h2>
+        <p>这是一个简单的HTML网页示例，展示如何在GitHub上部署静态网页。</p>
+        <p>你可以在这里添加任何内容，比如文字、图片、链接等。</p>
+        <img src="https://via.placeholder.com/800x400" alt="示例图片">
+        <p>这是一个示例图片，你可以替换为自己的图片。</p>
+        <p>访问 <a href="https://github.com" target="_blank">GitHub</a> 了解更多。</p>
+    </main>
+    <footer>
+        <p>&copy; 2023 我的简单网页</p>
+    </footer>
 </body>
 </html>
