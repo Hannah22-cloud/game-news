@@ -8,63 +8,45 @@
 </head>
 <body>
     <header>
-        <h1 id="page-title"></h1>
+        <h1>中国主流媒体游戏出海对外报道的话语变迁</h1>
     </header>
 
-    <main id="content">
-        <!-- 内容将通过 JavaScript 动态加载 -->
-    </main>
+    <section>
+        <h2>一、报道数量呈现波动式增长，变迁体现时代特征</h2>
+        <img src="https://i.imgur.com/XKHosfr.png" alt="2014-2024年《人民日报》（海外版）游戏报道数量变化图">
+        <p>
+            2014年到2017年，《人民日报》（海外版）游戏报道数量逐年增多。<br>
+            2018年、2020年与2022年报道数量产生了明显的低谷。<br>
+            2024年，海外版游戏报道数量爆发式增长。
+        </p>
+    </section>
+
+    <section>
+        <h2>二、有关三个重要游戏的报道数量变迁及态度特征</h2>
+        <img src="https://i.imgur.com/VwFz3dO.png" alt="三个游戏报道数量变化图（2017-2024）">
+        <p>
+            2000年，一系列国产网络游戏的诞生宣告了中国网游元年的到来，但国内市场仍然主要以代理海外游戏为主，原创游戏少之又少。<br>
+            2010年至今，中国游戏产业完成了从代理进口到自主原创的转型，一系列融合了中国传统文化元素的原创国产游戏进入国内市场，并走向海外，成为文化输出的重要载体。
+        </p>
+    </section>
+
+    <section>
+        <h2>三、报道态度中以正面报道为主，负面报道先增后减</h2>
+        <img src="https://i.imgur.com/74il2Bc.png" alt="2014-2024年《人民日报》海外版游戏报道态度变化图">
+        <img src="https://i.imgur.com/a/qDYLJ4e.png" alt="2014-2024年负面报道数量变化图">
+        <p>
+            2014-2024年，《人民日报》海外版游戏相关报道以正面报道为主，占比近80%（79.6%），中立报道数量占比最低（9.3%）。<br>
+            2014-2024年负面报道数量有三个明显的波峰，且数量相近，分别在2017年、2019年以及2021年。
+        </p>
+    </section>
+
+    <section>
+        <h2>四、词云图</h2>
+        <img src="https://i.imgur.com/XKHosfr.png" alt="词云图">
+    </section>
 
     <footer>
         <p>© 2023 网页设计示例</p>
     </footer>
-
-    <script>
-        // 动态加载 JSON 数据并渲染页面
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                // 设置页面标题
-                document.getElementById('page-title').textContent = data.title;
-
-                // 渲染每个部分
-                const content = document.getElementById('content');
-                data.sections.forEach(section => {
-                    const sectionElement = document.createElement('section');
-
-                    // 添加标题
-                    const title = document.createElement('h2');
-                    title.textContent = section.title;
-                    sectionElement.appendChild(title);
-
-                    // 添加图片
-                    if (section.image) {
-                        const img = document.createElement('img');
-                        img.src = section.image;
-                        img.alt = section.title;
-                        sectionElement.appendChild(img);
-                    } else if (section.images) {
-                        section.images.forEach(image => {
-                            const img = document.createElement('img');
-                            img.src = image;
-                            img.alt = section.title;
-                            sectionElement.appendChild(img);
-                        });
-                    }
-
-                    // 添加内容
-                    if (section.content) {
-                        section.content.forEach(text => {
-                            const p = document.createElement('p');
-                            p.textContent = text;
-                            sectionElement.appendChild(p);
-                        });
-                    }
-
-                    content.appendChild(sectionElement);
-                });
-            })
-            .catch(error => console.error('加载数据失败:', error));
-    </script>
 </body>
 </html>
