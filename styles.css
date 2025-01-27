@@ -1,28 +1,40 @@
+/* 基本样式 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Comic Neue', cursive, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #fff5f5; /* 淡红色背景 */
+    color: #5c2a2a; /* 深红色文字 */
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #ff6b6b; /* 鲜艳的红色 */
     color: white;
     padding: 20px;
     text-align: center;
+    border-bottom: 5px solid #ffcccb; /* 浅红色边框 */
 }
 
 h1 {
     margin: 0;
     font-size: 2.5em;
+    font-family: 'Ma Shan Zheng', cursive; /* 使用毛笔字体 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 文字阴影 */
+}
+
+iframe {
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 播放器阴影 */
 }
 
 h2 {
-    color: #4CAF50;
+    color: #ff6b6b; /* 鲜艳的红色 */
     margin-top: 30px;
     font-size: 1.8em;
+    font-family: 'Ma Shan Zheng', cursive; /* 使用毛笔字体 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* 文字阴影 */
 }
 
 section {
@@ -30,8 +42,9 @@ section {
     margin: 20px auto;
     max-width: 800px;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffcccb; /* 浅红色边框 */
 }
 
 img {
@@ -39,18 +52,22 @@ img {
     height: auto;
     display: block;
     margin: 20px 0;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 图片阴影 */
 }
 
 p {
     font-size: 1.1em;
     margin: 10px 0;
+    color: #5c2a2a; /* 深红色文字 */
 }
 
 footer {
     text-align: center;
     padding: 15px;
-    background-color: #333;
+    background-color: #ff6b6b; /* 鲜艳的红色 */
     color: white;
     margin-top: 30px;
+    border-top: 5px solid #ffcccb; /* 浅红色边框 */
+    font-family: 'Ma Shan Zheng', cursive; /* 使用毛笔字体 */
 }
