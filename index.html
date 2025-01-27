@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国主流媒体游戏出海对外报道的话语变迁</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="page-title"></h1>
+    </header>
+
+    <main id="content">
+        <!-- 内容将通过 JavaScript 动态加载 -->
+    </main>
+
+    <footer>
+        <p>© 2023 网页设计示例</p>
+    </footer>
+
+    <script>
+        // 动态加载 JSON 数据并渲染页面
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // 设置页面标题
+                document.getElementById('page-title').textContent = data.title;
+
+                // 渲染每个部分
+                const content = document.getElementById('content');
+                data.sections.forEach(section => {
+                    const sectionElement = document.createElement('section');
+
+                    // 添加标题
+                    const title = document.createElement('h2');
+                    title.textContent = section.title;
+                    sectionElement.appendChild(title);
+
+                    // 添加图片
+                    if (section.image) {
+                        const img = document.createElement('img');
+                        img.src = section.image;
+                        img.alt = section.title;
+                        sectionElement.appendChild(img);
+                    } else if (section.images) {
+                        section.images.forEach(image => {
+                            const img = document.createElement('img');
+                            img.src = image;
+                            img.alt = section.title;
+                            sectionElement.appendChild(img);
+                        });
+                    }
+
+                    // 添加内容
+                    if (section.content) {
+                        section.content.forEach(text => {
+                            const p = document.createElement('p');
+                            p.textContent = text;
+                            sectionElement.appendChild(p);
+                        });
+                    }
+
+                    content.appendChild(sectionElement);
+                });
+            })
+            .catch(error => console.error('加载数据失败:', error));
+    </script>
+</body>
+</html>
