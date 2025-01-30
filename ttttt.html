@@ -78,6 +78,37 @@
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+        
+         /* 悬停提示文字 */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #ffcccc;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
 
         /* 导航栏 */
         nav {
@@ -227,6 +258,9 @@
             <img src="https://i.imgur.com/XmkrLX9.png" alt="文化符号">
         </div>
         <h1>中国主流媒体游戏出海对外报道的话语变迁</h1>
+         <div class="tooltip">悬停在这里有惊喜哦～
+            <span class="tooltiptext">这里有一个隐藏的图片和音效！</span>
+        </div>
     </header>
 
     <nav>
