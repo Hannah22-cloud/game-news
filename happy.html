@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国主流媒体游戏出海对外报道的话语变迁</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background: #fff0f0;
+            color: #5a3e36;
+            line-height: 1.8;
+        }
+
+        /* 灯笼样式 */
+        .lantern {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            width: 80px;
+            z-index: 100;
+            animation: swing 3s ease-in-out infinite;
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(-15deg); }
+            50% { transform: rotate(15deg); }
+        }
+
+        /* 标题样式 */
+        header {
+            background: linear-gradient(135deg, #ff6666, #ff9999);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* 导航栏 */
+        nav {
+            background: rgba(255,102,102,0.95);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            backdrop-filter: blur(5px);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        nav a:hover {
+            background: #ff4d4d;
+            border-color: #fff;
+        }
+
+        /* 内容区域 */
+        section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #ff6666;
+            border-left: 5px solid #ff9999;
+            padding-left: 1rem;
+            margin: 2rem 0;
+            font-family: 'Pacifico', cursive;
+            font-size: 2.2rem;
+        }
+
+        /* 音乐播放器 */
+        .music-player {
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+            padding: 1rem;
+        }
+
+        /* 图片展示 */
+        .findings-img {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .findings-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #fffafa;
+            border-radius: 12px;
+        }
+
+        .highlight {
+            color: #ff4444;
+            font-weight: bold;
+            background: #fff0f0;
+            padding: 0.3rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* Kimi API样式 */
+        #kimi-api {
+            background: #fff5f5;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        input[type="text"] {
+            padding: 0.8rem;
+            width: 300px;
+            border: 2px solid #ff9999;
+            border-radius: 25px;
+            margin-right: 1rem;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 0.8rem 2rem;
+            background: #ff6666;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background: #ff4d4d;
+            transform: scale(1.05);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+            nav a {
+                padding: 0.5rem 1rem;
+            }
+            section {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 灯笼 -->
+    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" class="lantern" alt="灯笼">
+
+    <header>
+        <h1>中国主流媒体游戏出海对外报道的话语变迁</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#kimi">Kimi Api</a></li>
+            <li><a href="#findings">Findings</a></li>
+            <li><a href="#reflections">Reflections</a></li>
+        </ul>
+    </nav>
+
+    <!-- Music 部分 -->
+    <section id="music">
+        <h2>Music</h2>
+        <div class="music-player">
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" 
+                    width="100%" height="86" 
+                    src="//music.163.com/outchain/player?type=2&id=2663094919&auto=1&height=66"></iframe>
+        </div>
+    </section>
+
+    <!-- About us 部分 -->
+    <section id="about">
+        <h2>About us</h2>
+        <p>2024年，国产单机游戏《黑神话：悟空》一经推出，便迅速在全球范围内风靡。VG Insighs数据显示，截至2024年9月20日，该游戏销量已逾2000万份，总收入超过9.61亿美元，被誉为“中国首款3A单机游戏”。</p>
+        <p>《2024年中国游戏报告》显示，2024年我国自研游戏海外市场实销收入185.57亿美元，规模已连续五年超千亿元人民币。面对全球游戏市场放缓，市场竞争日趋激烈的国际环境下，我国游戏企业不断布局贯彻全球化战略，积极应对市场竞争格局，不断自主创新，深耕国际市场，增强国家文化软实力和国际影响力。</p>
+        <p>达雅·屠苏（Daya Thussu）曾将中国主流媒体称为能够挑战发达国家信息霸权的“国际信息逆流”的重要组成部分。在游戏出海的传播方面，主流媒体积极发挥媒介自身作用，借助出海游戏的符号资源以及游戏化叙事的经验，开拓国际传播新的话语场域。</p>
+        <p>因此，本程序以人民网（海外版）2014年至2024十年间的270篇与游戏相关的报道为样本，选定9个关键词——“online game” “video game” “electronic game” “mobile game” “electronic sports” “computer games” “Black Myth” “Genshin Impact” “Honor of Kings”。在爬取数据后，对其进行数据清洗和分析，得到一系列数据统计图表、情感分析结果图、词云图等。为方便图表呈现并且将本学期课程网页制作知识融会贯通，分析图表以网页的形式进行呈现。</p>
+    </section>
+
+    <!-- Kimi API 部分 -->
+    <section id="kimi">
+        <h2>Kimi Api</h2>
+        <div id="kimi-api">
+            <input type="text" id="query" placeholder="请输入您的问题">
+            <button onclick="callKimi()">提交</button>
+            <p id="response"></p>
+        </div>
+    </section>
+
+    <!-- Findings 部分 -->
+    <section id="findings">
+        <h2>Findings</h2>
+        
+        <div class="findings-section">
+            <h3>1.报道数量呈现波动式增长，变迁体现时代特征</h3>
+            <img src="https://i.imgur.com/0xHOrhj.png" class="findings-img" alt="报道数量趋势图">
+            <p>2014年到2017年，《人民日报》（海外版）游戏报道数量逐年增多。<br>
+            2018年、2020年与2022年报道数量产生了明显的低谷。<br>
+            2024年，海外版游戏报道数量爆发式增长。</p>
+        </div>
+
+        <div class="findings-section">
+            <h3>2.重要游戏报道变迁及态度特征</h3>
+            <img src="https://i.imgur.com/b69D0Bc.png" class="findings-img" alt="游戏报道变迁图">
+            <p>2000年，一系列国产网络游戏的诞生宣告了中国网游元年的到来，但国内市场仍然主要以代理海外游戏为主，原创游戏少之又少。<br>
+            2010年至今，中国游戏产业完成了从代理进口到自主原创的转型，一系列融合了中国传统文化元素的原创国产游戏进入国内市场，并走向海外，成为文化输出的重要载体。</p>
+        </div>
+
+        <div class="findings-section">
+            <h3>3.报道态度分析</h3>
+            <img src="https://i.imgur.com/STTuq7Q.png" class="findings-img" alt="报道态度分析图">
+            <p>2014-2024年，《人民日报》海外版游戏相关报道以正面报道为主，<span class="highlight">占比近80%（79.6%）</span>，中立报道数量占比最低（9.3%）<br>
+            2014-2024年负面报道数量有三个明显的波峰，且数量相近，分别在2017年、2019年以及2021年。</p>
+        </div>
+
+        <div class="findings-section">
+            <h3>4.词云分析</h3>
+            <img src="https://i.imgur.com/tjtqI8N.png" class="findings-img" alt="词云图">
+        </div>
+    </section>
+
+    <!-- Reflections 部分 -->
+    <section id="reflections">
+        <h2>Reflections</h2>
+        <p>本作业旨在结合课程所学，通过梳理游戏报道的数量与态度变迁趋势，重点关注游戏出海取得重大成果的关键年份，深入探讨中国游戏出海对外传播话语的特质及演变路径。</p>
+        <p>通过完成本作业，我对于爬虫程序的制作、网页爬取、数据分析以及网页制作等方法进行了复习和熟练。通过课程知识的复习、B站自学以及AI技术的辅助，我对于爬虫知识有了更深的了解。更重要的是，在如今AI技术不断发展的时代，我与AI对话的技能也得到了锻炼（更成为了Deepseek黑马突破的见证者和受益者）。</p>
+        <p class="highlight">注明：部分代码撰写由AI工具（ChatGpt、Deepseek、Kimi）辅助。</p>
+    </section>
+
+    <script>
+        // Kimi API 调用函数
+        async function callKimi() {
+            const query = document.getElementById('query').value;
+            const responseElement = document.getElementById('response');
+            
+            try {
+                const response = await fetch('/call-kimi', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ query })
+                });
+                
+                const data = await response.json();
+                responseElement.innerText = data.response;
+                responseElement.style.color = '#5a3e36';
+            } catch (error) {
+                responseElement.innerText = '请求失败，请稍后重试';
+                responseElement.style.color = 'red';
+            }
+        }
+
+        // 平滑滚动
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // 灯笼动画
+        function animateLantern() {
+            const lantern = document.querySelector('.lantern');
+            let rotation = -15;
+            let direction = 1;
+            
+            setInterval(() => {
+                rotation += direction * 0.5;
+                if (rotation > 15) direction = -1;
+                if (rotation < -15) direction = 1;
+                lantern.style.transform = `rotate(${rotation}deg)`;
+            }, 50);
+        }
+        animateLantern();
+    </script>
+</body>
+</html>
